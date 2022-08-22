@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SafDB Scheduling Assistance</title>
+
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <label for="startTime">TimeTableStartColumn:</label>
+        <input type="number" id="startTime" class="inputField" value="0700">
+
+        <label for="endTime">TimeTableEndColumn:</label>
+        <input type="number" id="endTime" class="inputField" value="0600">
+
+        <label for="noOfSpec">noOfSpec:</label>
+        <input type="number" id="noOfSpec" class="inputField" value="3">
+
+        <label for="noOfDayMen">noOfDayMen:</label>
+        <input type="number" id="noOfDayMen" class="inputField" value="8">
+
+        <label for="noOfNightMen">noOfNightMen:</label>
+        <input type="number" id="noOfNightMen" class="inputField" value="3">
+        <br>
+        
+        <button onclick="createTableBtn()">createTable</button>
+        <br>
+        <!-- IMPLEMENT EVENTUALLY
+        <input type="file" id="jsonFile">
+        <button onclick="loadTable()">Load JSON File</button> -->
+        <label for="jsonText">JsonText:</label>
+        <input type="text" id="jsonText" class="inputField"></input>
+        <button onclick="loadTable()">Load JSON File</button> <i>1. copy text from jsonIDs file into "JsonText" input field     2. click "Load JSON File" </i>
+    </header>
+    
+    <section>
+        <div id="detailingErrorDiv"></div>
+        <div id="tableDiv"></div>
+        <br>
+        
+        <button onclick="randomizeNames()">Randomize Names</button>
+        <button onclick="cycleMen()">Cycle Men</button>
+        <br>
+        <br>
+
+        <!--current date temporary?-->
+        <label for="currentDate">CurrentDate:</label>
+        <input type="date" id="currentDate" value="2021-09-28" style="width:130px">
+
+        <label for="startDate">StartDate:</label>
+        <input type="date" id="startDate" value="2021-01-01" style="width:130px">
+
+        <label for="endDate">EndDate:</label>
+        <input type="date" id="endDate" value="2021-01-01" style="width:130px">
+        <br>
+
+        <!--no need validate schedule, will update live-->
+        <button onclick="validateSchedule()">Validate Schedule</button>
+        <button onclick="saveAsCsv()">Save Google CSV Copy</button> 
+        <br><br>
+        <a href="https://docs.google.com/spreadsheets/d/1R8wjvnlTE81gpx1B10Nv6GIrtQZc5bYj14lHTlZUncI/edit#gid=254875262" target="_blank">
+            <button>Go To Google Sheets</button>
+        </a>
+    </section>
+
+    <section>
+        <table class="drawArmTable">
+            <tr><th>Draw Arms</th></tr>
+            <tr><td></td></tr>
+            <tr><td></td></tr>
+            <tr><td></td></tr>
+            <tr><td></td></tr>
+            <tr><td></td></tr>
+        </table>
+    </section>
+
+    <aside>
+
+    </aside>
+    
+
+    <footer>
+        <h1>Settings</h1>
+        <div class="settingsTabs">
+            <button class="settingsTabsLink" onclick="">Edit Personnel Settings</button>
+            <button class="settingsTabsLink" onclick="">Edit Default Settings</button>
+            <button class="settingsTabsLink" onclick="">Edit Scheduling Procedure Settings</button>
+        </div>
+
+        <div id="EPS" class="settingsTabContent">
+            <h3>Personnel Settings</h3>
+        </div>
+
+        <div id="EDS" class="settingsTabContent">
+            <h3>Default Settings</h3>
+        </div>
+
+        <div id="ESPS " class="settingsTabContent">
+            <h3>Scheduling Procedure Settings</h3>
+        </div>
+    </footer>
+    
+    <script src="settings.js"></script>
+    <script src="loadSettings.js"></script>
+    <script src="scriptSettingsTab.js"></script>
+    <script src="createSchedule.js"></script>
+    <!---below for saveAs-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+    <script src="validateAndProcessSchedule.js"></script>
+    <script src="loadTable.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,60 @@
+body {
+    font-family: Arial;
+    color:#fff;
+    background-color: #222;
+}
+header {
+    font-family: Arial;
+    color:#fff;
+    background-color: #222;
+    padding:5px 10px 20px 10px;
+}
+
+option, select {
+    color:#fff;
+    background-color:#222
+}
+
+section {
+    font-family: Arial;
+    color:#fff;
+    background-color: #444;
+    padding:10px;
+}
+footer {
+    font-family: Arial;
+    color:#fff;
+    background-color: #222;
+}
+#tableDiv{
+    background-color: #444;
+    padding: 10px;
+}
+
+.tableNameColumn {
+    display: flex;
+    justify-content: space-between;
+}
+
+table {
+    border-collapse:collapse;
+    width: 100%;
+    background-color: #444;
+}
+
+td, th {
+    border: 1px solid #fff;
+}
+
+#date {
+    margin-right: 10px;
+}
+
+.inputField {
+    width: 50px;
+    margin-right:10px;
+}
+#table tr:nth-child(even){background-color: #333;}
+
+#table th:nth-child(odd){color: #999;}
+
